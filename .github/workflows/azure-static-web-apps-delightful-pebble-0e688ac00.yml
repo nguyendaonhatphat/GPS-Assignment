@@ -19,7 +19,8 @@ jobs:
         with:
           submodules: true
           lfs: false
-            - name: Inject Azure Maps Key
+
+      - name: Inject Azure Maps Key
         env:
           AZURE_MAPS_KEY: ${{ secrets.AZURE_MAPS_KEY }}
         run: sed -i "s|YOUR_AZURE_MAPS_KEY|${AZURE_MAPS_KEY}|g" webapp/index.html
