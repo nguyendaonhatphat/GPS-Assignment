@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GPS Location Tracker</title>
+
+    <!-- Azure Maps CSS -->
+    <link rel="stylesheet"
+          href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css"
+          type="text/css">
+
+    <!-- Azure Maps JavaScript SDK -->
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #myMap {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Map container -->
+    <div id="myMap"></div>
+
+    <script>
+        var map;
+
+        function init() {
+
+            map = new atlas.Map('myMap', {
+                center: [106.6297, 10.8231],
+                zoom: 14,
+
+                authOptions: {
+                    authType: 'subscriptionKey',
+                    subscriptionKey: 'YOUR_AZURE_MAPS_KEY'
+                }
+            });
+        }
+
+        init();
+    </script>
+
+</body>
+</html>
